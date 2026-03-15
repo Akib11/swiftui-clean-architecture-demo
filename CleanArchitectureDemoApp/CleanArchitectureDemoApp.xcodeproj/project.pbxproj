@@ -17,6 +17,18 @@
 		E1C8B4902F66F9C000367861 /* ShopCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B48F2F66F9C000367861 /* ShopCoordinatorView.swift */; };
 		E1C8B4922F66F9CF00367861 /* CartCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4912F66F9CF00367861 /* CartCoordinatorView.swift */; };
 		E1C8B4962F66FA2800367861 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4952F66FA2800367861 /* CartView.swift */; };
+		E1C8B4A42F66FC8900367861 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4A32F66FC8900367861 /* URLParameterEncoder.swift */; };
+		E1C8B4A52F66FC8900367861 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4A22F66FC8900367861 /* ParameterEncoding.swift */; };
+		E1C8B4A62F66FC8900367861 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4A12F66FC8900367861 /* JSONParameterEncoder.swift */; };
+		E1C8B4AD2F66FCAA00367861 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4AC2F66FCAA00367861 /* Router.swift */; };
+		E1C8B4AE2F66FCAA00367861 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4A92F66FCAA00367861 /* HTTPMethod.swift */; };
+		E1C8B4AF2F66FCAA00367861 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4AA2F66FCAA00367861 /* HTTPTask.swift */; };
+		E1C8B4B02F66FCAA00367861 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4A82F66FCAA00367861 /* EndPointType.swift */; };
+		E1C8B4B12F66FCAA00367861 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4AB2F66FCAA00367861 /* RequestBuilder.swift */; };
+		E1C8B4B42F66FCC900367861 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4B32F66FCC900367861 /* APIError.swift */; };
+		E1C8B4B72F66FCE100367861 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4B62F66FCE100367861 /* NetworkLogger.swift */; };
+		E1C8B4BB2F66FEBB00367861 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4BA2F66FEB800367861 /* SessionStore.swift */; };
+		E1C8B4BD2F66FEEE00367861 /* TokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4BC2F66FEEE00367861 /* TokenProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +62,18 @@
 		E1C8B48F2F66F9C000367861 /* ShopCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCoordinatorView.swift; sourceTree = "<group>"; };
 		E1C8B4912F66F9CF00367861 /* CartCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCoordinatorView.swift; sourceTree = "<group>"; };
 		E1C8B4952F66FA2800367861 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		E1C8B4A12F66FC8900367861 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		E1C8B4A22F66FC8900367861 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		E1C8B4A32F66FC8900367861 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		E1C8B4A82F66FCAA00367861 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		E1C8B4A92F66FCAA00367861 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		E1C8B4AA2F66FCAA00367861 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		E1C8B4AB2F66FCAA00367861 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		E1C8B4AC2F66FCAA00367861 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E1C8B4B32F66FCC900367861 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		E1C8B4B62F66FCE100367861 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		E1C8B4BA2F66FEB800367861 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		E1C8B4BC2F66FEEE00367861 /* TokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -130,6 +154,7 @@
 		E1C8B2D12F6054CB00367861 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E1C8B4B92F66FEAA00367861 /* Auth */,
 				E1C8B2D92F60562700367861 /* Networking */,
 				E1C8B2D82F60561B00367861 /* Storage */,
 				E1C8B2D72F60561000367861 /* DesignSystem */,
@@ -196,6 +221,11 @@
 		E1C8B2D92F60562700367861 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E1C8B4B82F66FDC100367861 /* APIClient */,
+				E1C8B4A02F66FC7000367861 /* Encoding */,
+				E1C8B4A72F66FC9E00367861 /* Request */,
+				E1C8B4B52F66FCD400367861 /* Logging */,
+				E1C8B4B22F66FCB300367861 /* ErrorHandling */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -269,6 +299,60 @@
 			children = (
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		E1C8B4A02F66FC7000367861 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8B4A12F66FC8900367861 /* JSONParameterEncoder.swift */,
+				E1C8B4A22F66FC8900367861 /* ParameterEncoding.swift */,
+				E1C8B4A32F66FC8900367861 /* URLParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		E1C8B4A72F66FC9E00367861 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8B4A82F66FCAA00367861 /* EndPointType.swift */,
+				E1C8B4A92F66FCAA00367861 /* HTTPMethod.swift */,
+				E1C8B4AA2F66FCAA00367861 /* HTTPTask.swift */,
+				E1C8B4AB2F66FCAA00367861 /* RequestBuilder.swift */,
+				E1C8B4AC2F66FCAA00367861 /* Router.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		E1C8B4B22F66FCB300367861 /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8B4B32F66FCC900367861 /* APIError.swift */,
+			);
+			path = ErrorHandling;
+			sourceTree = "<group>";
+		};
+		E1C8B4B52F66FCD400367861 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8B4B62F66FCE100367861 /* NetworkLogger.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		E1C8B4B82F66FDC100367861 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		E1C8B4B92F66FEAA00367861 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8B4BA2F66FEB800367861 /* SessionStore.swift */,
+				E1C8B4BC2F66FEEE00367861 /* TokenProvider.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,13 +499,25 @@
 			files = (
 				E1C8B4962F66FA2800367861 /* CartView.swift in Sources */,
 				E1C8B2DF2F60575200367861 /* AppCoordinator.swift in Sources */,
+				E1C8B4A42F66FC8900367861 /* URLParameterEncoder.swift in Sources */,
+				E1C8B4A52F66FC8900367861 /* ParameterEncoding.swift in Sources */,
+				E1C8B4A62F66FC8900367861 /* JSONParameterEncoder.swift in Sources */,
 				E1C8B48C2F66F9A800367861 /* AppTab.swift in Sources */,
+				E1C8B4BB2F66FEBB00367861 /* SessionStore.swift in Sources */,
 				E1C8B2A52F604D7700367861 /* CleanArchitectureDemoAppApp.swift in Sources */,
 				E1C8B2E12F60575D00367861 /* DependencyContainer.swift in Sources */,
 				E1C8B48E2F66F9B400367861 /* RootTabView.swift in Sources */,
+				E1C8B4B72F66FCE100367861 /* NetworkLogger.swift in Sources */,
 				E1C8B4922F66F9CF00367861 /* CartCoordinatorView.swift in Sources */,
 				E1C8B4902F66F9C000367861 /* ShopCoordinatorView.swift in Sources */,
 				E1C8B2A62F604D7700367861 /* ShopView.swift in Sources */,
+				E1C8B4AD2F66FCAA00367861 /* Router.swift in Sources */,
+				E1C8B4AE2F66FCAA00367861 /* HTTPMethod.swift in Sources */,
+				E1C8B4AF2F66FCAA00367861 /* HTTPTask.swift in Sources */,
+				E1C8B4B02F66FCAA00367861 /* EndPointType.swift in Sources */,
+				E1C8B4B12F66FCAA00367861 /* RequestBuilder.swift in Sources */,
+				E1C8B4BD2F66FEEE00367861 /* TokenProvider.swift in Sources */,
+				E1C8B4B42F66FCC900367861 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
