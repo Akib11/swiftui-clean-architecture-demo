@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		E1C8B2A42F604D7700367861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C8B2A02F604D7700367861 /* Assets.xcassets */; };
 		E1C8B2A52F604D7700367861 /* CleanArchitectureDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B2A12F604D7700367861 /* CleanArchitectureDemoAppApp.swift */; };
-		E1C8B2A62F604D7700367861 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B2A22F604D7700367861 /* DashboardView.swift */; };
+		E1C8B2A62F604D7700367861 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B2A22F604D7700367861 /* ShopView.swift */; };
 		E1C8B2DF2F60575200367861 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B2DE2F60575200367861 /* AppCoordinator.swift */; };
 		E1C8B2E12F60575D00367861 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B2E02F60575D00367861 /* DependencyContainer.swift */; };
+		E1C8B48C2F66F9A800367861 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B48B2F66F9A800367861 /* AppTab.swift */; };
+		E1C8B48E2F66F9B400367861 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B48D2F66F9B400367861 /* RootTabView.swift */; };
+		E1C8B4902F66F9C000367861 /* ShopCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B48F2F66F9C000367861 /* ShopCoordinatorView.swift */; };
+		E1C8B4922F66F9CF00367861 /* CartCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4912F66F9CF00367861 /* CartCoordinatorView.swift */; };
+		E1C8B4962F66FA2800367861 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4952F66FA2800367861 /* CartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +42,14 @@
 		E1C8B27F2F604C2300367861 /* CleanArchitectureDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8B2A02F604D7700367861 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1C8B2A12F604D7700367861 /* CleanArchitectureDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanArchitectureDemoAppApp.swift; sourceTree = "<group>"; };
-		E1C8B2A22F604D7700367861 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		E1C8B2A22F604D7700367861 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		E1C8B2DE2F60575200367861 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E1C8B2E02F60575D00367861 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		E1C8B48B2F66F9A800367861 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
+		E1C8B48D2F66F9B400367861 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		E1C8B48F2F66F9C000367861 /* ShopCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCoordinatorView.swift; sourceTree = "<group>"; };
+		E1C8B4912F66F9CF00367861 /* CartCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCoordinatorView.swift; sourceTree = "<group>"; };
+		E1C8B4952F66FA2800367861 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -110,6 +120,8 @@
 			children = (
 				E1C8B2A12F604D7700367861 /* CleanArchitectureDemoAppApp.swift */,
 				E1C8B2DE2F60575200367861 /* AppCoordinator.swift */,
+				E1C8B48D2F66F9B400367861 /* RootTabView.swift */,
+				E1C8B48B2F66F9A800367861 /* AppTab.swift */,
 				E1C8B2E02F60575D00367861 /* DependencyContainer.swift */,
 			);
 			path = App;
@@ -128,7 +140,8 @@
 		E1C8B2D22F6054D200367861 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				E1C8B2D62F6055B500367861 /* Dashboard */,
+				E1C8B4932F66FA0E00367861 /* Cart */,
+				E1C8B2D62F6055B500367861 /* Shop */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -155,7 +168,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		E1C8B2D62F6055B500367861 /* Dashboard */ = {
+		E1C8B2D62F6055B500367861 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
 				E1C8B2DA2F60567B00367861 /* View */,
@@ -163,7 +176,7 @@
 				E1C8B2DC2F60569900367861 /* Coordinator */,
 				E1C8B2DD2F6056A200367861 /* Repository */,
 			);
-			path = Dashboard;
+			path = Shop;
 			sourceTree = "<group>";
 		};
 		E1C8B2D72F60561000367861 /* DesignSystem */ = {
@@ -190,7 +203,7 @@
 		E1C8B2DA2F60567B00367861 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E1C8B2A22F604D7700367861 /* DashboardView.swift */,
+				E1C8B2A22F604D7700367861 /* ShopView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,11 +218,53 @@
 		E1C8B2DC2F60569900367861 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				E1C8B48F2F66F9C000367861 /* ShopCoordinatorView.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		E1C8B2DD2F6056A200367861 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E1C8B4932F66FA0E00367861 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8B4992F66FA5E00367861 /* Repository */,
+				E1C8B4982F66FA4E00367861 /* Coordinator */,
+				E1C8B4972F66FA3E00367861 /* ViewModel */,
+				E1C8B4942F66FA1A00367861 /* View */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		E1C8B4942F66FA1A00367861 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8B4952F66FA2800367861 /* CartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1C8B4972F66FA3E00367861 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E1C8B4982F66FA4E00367861 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8B4912F66F9CF00367861 /* CartCoordinatorView.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E1C8B4992F66FA5E00367861 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -358,10 +413,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C8B4962F66FA2800367861 /* CartView.swift in Sources */,
 				E1C8B2DF2F60575200367861 /* AppCoordinator.swift in Sources */,
+				E1C8B48C2F66F9A800367861 /* AppTab.swift in Sources */,
 				E1C8B2A52F604D7700367861 /* CleanArchitectureDemoAppApp.swift in Sources */,
 				E1C8B2E12F60575D00367861 /* DependencyContainer.swift in Sources */,
-				E1C8B2A62F604D7700367861 /* DashboardView.swift in Sources */,
+				E1C8B48E2F66F9B400367861 /* RootTabView.swift in Sources */,
+				E1C8B4922F66F9CF00367861 /* CartCoordinatorView.swift in Sources */,
+				E1C8B4902F66F9C000367861 /* ShopCoordinatorView.swift in Sources */,
+				E1C8B2A62F604D7700367861 /* ShopView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
