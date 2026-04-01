@@ -12,9 +12,9 @@ public enum AppEnvironment {
 
     var host: URL {
         switch self {
-        case .production: return URL(string: "https://www.landlordhq.app")!
-        case .staging:    return URL(string: "https://api.landlordhq.app")!
-        case .qa:         return URL(string: "http://192.168.1.81:3000")!
+        case .production: return URL(string: "https://randomuser.me/")!
+        case .staging:    return URL(string: "https://randomuser.me/")!
+        case .qa:         return URL(string: "https://randomuser.me/")!
         }
     }
 }

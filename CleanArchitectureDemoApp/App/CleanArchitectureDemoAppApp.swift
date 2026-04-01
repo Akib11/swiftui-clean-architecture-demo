@@ -11,13 +11,12 @@ import SwiftData
 @main
 struct CleanArchitectureDemoAppApp: App {
 
-    var body: some Scene {
-        WindowGroup {
-            UsersView(
-                    viewModel: UsersViewModel(
-                        service: MockUsersService()
-                    )
-                )
+    @StateObject private var coordinator = AppCoordinator()
+        
+        var body: some Scene {
+            WindowGroup {
+                RootTabView()
+                    .environmentObject(coordinator)
+            }
         }
-    }
 }
