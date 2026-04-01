@@ -13,7 +13,11 @@ struct CleanArchitectureDemoAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            DashboardView()
+            UsersView(
+                    viewModel: UsersViewModel(
+                        service: MockUsersService()
+                    )
+                )
         }
     }
 }
