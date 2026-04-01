@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+final class DependencyContainer {
+    
+    func makeUsersService() -> UsersServiceProtocol {
+        UsersService(router: Router<UsersAPI>())
+    }
+    
+    func makeUsersViewModel() -> UsersViewModel {
+        UsersViewModel(service: makeUsersService())
+    }
+}
