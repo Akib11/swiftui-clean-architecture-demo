@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import Combine
+
+final class AppCoordinator: ObservableObject {
+    
+    let container: DependencyContainer
+    
+    init(container: DependencyContainer = DependencyContainer()) {
+        self.container = container
+    }
+}

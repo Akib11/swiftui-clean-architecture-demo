@@ -30,7 +30,7 @@ final class UsersViewModel: ObservableObject {
         
         do {
             let users = try await service.getUsers(page: page, results: 20)
-            
+            print("🔴🔴🔴🔴 User: ", users.count)
             state = .success(users)
             page += 1
             

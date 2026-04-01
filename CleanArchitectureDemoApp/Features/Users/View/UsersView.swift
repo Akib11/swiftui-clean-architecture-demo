@@ -13,8 +13,10 @@ struct UsersView: View {
     @StateObject var viewModel: UsersViewModel
     
     var body: some View {
+        let _ = print("✅ UsersView body rendered")
         content
             .task {
+                print("✅ UsersView .task fired")
                 await viewModel.loadUsers()
             }
     }
@@ -24,7 +26,7 @@ struct UsersView: View {
         switch viewModel.state {
             
         case .idle:
-            EmptyView()
+            ProgressView("Loading users...")
             
         case .loading:
             ProgressView()
