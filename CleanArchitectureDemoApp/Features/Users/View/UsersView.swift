@@ -56,7 +56,10 @@ private extension UsersView {
 #Preview {
     UsersView(
         viewModel: UsersViewModel(
-            service: MockUsersService()
+            repository: UsersRepository(
+                remoteService: MockUsersService(),
+                cacheService: MockUsersCacheService()
+            )
         )
     )
 }

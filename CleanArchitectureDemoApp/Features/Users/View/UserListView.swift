@@ -51,7 +51,9 @@ struct UserRowCard: View {
     }
 
     var avatarGradient: LinearGradient {
-        let hue = Double(user.id.uuidString.hash & 0xFF) / 255.0
+        let sum = user.id.unicodeScalars.reduce(0) { $0 + Int($1.value) }
+        let hue = Double(sum % 256) / 255.0
+        
         return LinearGradient(
             colors: [
                 Color(hue: hue, saturation: 0.55, brightness: 0.75),
