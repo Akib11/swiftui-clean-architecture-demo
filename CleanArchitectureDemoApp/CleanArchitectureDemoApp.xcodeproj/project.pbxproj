@@ -40,6 +40,12 @@
 		E1C8B4B72F66FCE100367861 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4B62F66FCE100367861 /* NetworkLogger.swift */; };
 		E1C8B4BB2F66FEBB00367861 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4BA2F66FEB800367861 /* SessionStore.swift */; };
 		E1C8B4BD2F66FEEE00367861 /* TokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4BC2F66FEEE00367861 /* TokenProvider.swift */; };
+		E1D3003A2F8E6041001B8B97 /* UsersCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D300392F8E6041001B8B97 /* UsersCacheService.swift */; };
+		E1D3003C2F8E60E3001B8B97 /* UsersCacheServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3003B2F8E60E3001B8B97 /* UsersCacheServiceProtocol.swift */; };
+		E1D3003E2F8E60FC001B8B97 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3003D2F8E60FC001B8B97 /* UsersRepository.swift */; };
+		E1D300402F8E6160001B8B97 /* UsersServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3003F2F8E6160001B8B97 /* UsersServiceProtocol.swift */; };
+		E1D300422F8E61BC001B8B97 /* CachedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D300412F8E61BC001B8B97 /* CachedUser.swift */; };
+		E1D300442F8E62B3001B8B97 /* MockUsersCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D300432F8E62B3001B8B97 /* MockUsersCacheService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +102,12 @@
 		E1C8B4B62F66FCE100367861 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		E1C8B4BA2F66FEB800367861 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		E1C8B4BC2F66FEEE00367861 /* TokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProvider.swift; sourceTree = "<group>"; };
+		E1D300392F8E6041001B8B97 /* UsersCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCacheService.swift; sourceTree = "<group>"; };
+		E1D3003B2F8E60E3001B8B97 /* UsersCacheServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCacheServiceProtocol.swift; sourceTree = "<group>"; };
+		E1D3003D2F8E60FC001B8B97 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		E1D3003F2F8E6160001B8B97 /* UsersServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersServiceProtocol.swift; sourceTree = "<group>"; };
+		E1D300412F8E61BC001B8B97 /* CachedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedUser.swift; sourceTree = "<group>"; };
+		E1D300432F8E62B3001B8B97 /* MockUsersCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsersCacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -240,7 +252,9 @@
 				E1C8B2DA2F60567B00367861 /* View */,
 				E1C8B2DB2F60568100367861 /* ViewModel */,
 				E1C8B2DC2F60569900367861 /* Coordinator */,
+				E1D300452F8E638F001B8B97 /* Services */,
 				E1C8B2DD2F6056A200367861 /* Repository */,
+				E1D300462F8E63BF001B8B97 /* Cache */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -255,6 +269,7 @@
 		E1C8B2D82F60561B00367861 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				E1D300412F8E61BC001B8B97 /* CachedUser.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -301,8 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				E174C47F2F7D50F9000E9B6E /* UsersRepositoryProtocol.swift */,
-				E174C4812F7D5114000E9B6E /* UsersService.swift */,
-				E174C4882F7D5732000E9B6E /* MockUsersService.swift */,
+				E1D3003D2F8E60FC001B8B97 /* UsersRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -402,6 +416,26 @@
 				E1C8B4BC2F66FEEE00367861 /* TokenProvider.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		E1D300452F8E638F001B8B97 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E174C4812F7D5114000E9B6E /* UsersService.swift */,
+				E1D3003F2F8E6160001B8B97 /* UsersServiceProtocol.swift */,
+				E174C4882F7D5732000E9B6E /* MockUsersService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E1D300462F8E63BF001B8B97 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				E1D300392F8E6041001B8B97 /* UsersCacheService.swift */,
+				E1D3003B2F8E60E3001B8B97 /* UsersCacheServiceProtocol.swift */,
+				E1D300432F8E62B3001B8B97 /* MockUsersCacheService.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,19 +585,25 @@
 				E174C47E2F7D4F5A000E9B6E /* UsersAPI.swift in Sources */,
 				E174C4F02F7EB79F000E9B6E /* UserListView.swift in Sources */,
 				E174C49C2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift in Sources */,
+				E1D3003A2F8E6041001B8B97 /* UsersCacheService.swift in Sources */,
 				E1C8B4A42F66FC8900367861 /* URLParameterEncoder.swift in Sources */,
 				E1C8B4A52F66FC8900367861 /* ParameterEncoding.swift in Sources */,
+				E1D3003E2F8E60FC001B8B97 /* UsersRepository.swift in Sources */,
 				E1C8B4A62F66FC8900367861 /* JSONParameterEncoder.swift in Sources */,
 				E1C8B48C2F66F9A800367861 /* AppTab.swift in Sources */,
 				E1C8B4BB2F66FEBB00367861 /* SessionStore.swift in Sources */,
+				E1D3003C2F8E60E3001B8B97 /* UsersCacheServiceProtocol.swift in Sources */,
 				E1C8B2A52F604D7700367861 /* CleanArchitectureDemoAppApp.swift in Sources */,
 				E1C8B2E12F60575D00367861 /* DependencyContainer.swift in Sources */,
 				E174C47A2F7D4E0C000E9B6E /* RandomUserResponse.swift in Sources */,
 				E1C8B48E2F66F9B400367861 /* RootTabView.swift in Sources */,
 				E1C8B4B72F66FCE100367861 /* NetworkLogger.swift in Sources */,
+				E1D300402F8E6160001B8B97 /* UsersServiceProtocol.swift in Sources */,
+				E1D300442F8E62B3001B8B97 /* MockUsersCacheService.swift in Sources */,
 				E1C8B4922F66F9CF00367861 /* CartCoordinatorView.swift in Sources */,
 				E1C8B2A62F604D7700367861 /* UsersView.swift in Sources */,
 				E1C8B4AD2F66FCAA00367861 /* Router.swift in Sources */,
+				E1D300422F8E61BC001B8B97 /* CachedUser.swift in Sources */,
 				E1C8B4AE2F66FCAA00367861 /* HTTPMethod.swift in Sources */,
 				E174C4822F7D5114000E9B6E /* UsersService.swift in Sources */,
 				E174C4892F7D5732000E9B6E /* MockUsersService.swift in Sources */,
@@ -739,7 +779,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5UT2MG9LM9;
+				DEVELOPMENT_TEAM = K6KJ9RKV67;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -755,6 +795,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.AkibMakesApps.CleanArchitectureDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -771,7 +815,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5UT2MG9LM9;
+				DEVELOPMENT_TEAM = K6KJ9RKV67;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -787,6 +831,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.AkibMakesApps.CleanArchitectureDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;

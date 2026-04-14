@@ -11,14 +11,14 @@ import Combine
 @MainActor
 final class UsersViewModel: ObservableObject {
     
-    private let service: UsersServiceProtocol
+    private let repository: UsersRepositoryProtocol
     
     @Published var state: ViewState<[User]> = .idle
     
     private var page = 1
     
-    init(service: UsersServiceProtocol) {
-        self.service = service
+    init(repository: UsersRepositoryProtocol) {
+        self.repository = repository
     }
     
     func loadUsers() async {
@@ -29,7 +29,7 @@ final class UsersViewModel: ObservableObject {
         state = .loading
         
         do {
-            let users = try await service.getUsers(page: page, results: 20)
+            let users = try await repository.getUsers(page: page, results: 20)
             print("🔴🔴🔴🔴 User: ", users.count)
             state = .success(users)
             page += 1

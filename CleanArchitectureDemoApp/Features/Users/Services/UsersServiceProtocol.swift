@@ -1,12 +1,12 @@
 //
-//  UsersRepositoryProtocol.swift
+//  UsersServiceProtocol.swift
 //  CleanArchitectureDemoApp
 //
-//  Created by Akib Quraishi on 01/04/2026.
+//  Created by Akib Quraishi on 14/04/2026.
 //
 
 import Foundation
 
-protocol UsersRepositoryProtocol {
+protocol UsersServiceProtocol {
     func getUsers(page: Int, results: Int) async throws -> [User]
 }
