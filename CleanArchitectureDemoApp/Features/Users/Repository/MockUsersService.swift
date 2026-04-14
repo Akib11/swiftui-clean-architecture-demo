@@ -28,3 +28,17 @@ final class MockUsersService: UsersServiceProtocol {
         }
     }
 }
+
+
+// MARK: - Sample Data
+
+extension User {
+    static let samples: [User] = [
+        User(fullName: "Alexandra Chen", email: "a.chen@studio.io", avatarURL: "https://i.pravatar.cc/150?img=1"),
+        User(fullName: "Marcus Rivera", email: "m.rivera@studio.io", avatarURL: "https://i.pravatar.cc/150?img=3"),
+        User(fullName: "Priya Nair", email: "p.nair@studio.io", avatarURL: "https://i.pravatar.cc/150?img=5"),
+        User(fullName: "Jordan Wells", email: "j.wells@studio.io", avatarURL: "https://i.pravatar.cc/150?img=7"),
+        User(fullName: "Sofia Andersen", email: "s.andersen@studio.io", avatarURL: "https://i.pravatar.cc/150?img=9"),
+        User(fullName: "Tobias Müller", email: "t.muller@studio.io", avatarURL: "https://i.pravatar.cc/150?img=11"),
+    ]
+}

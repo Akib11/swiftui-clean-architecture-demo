@@ -32,7 +32,7 @@ struct UsersView: View {
             ProgressView()
             
         case .success(let users):
-            usersList(users)
+            UserListView(users: users)
             
         case .failure(let message):
             errorView(message)
@@ -43,15 +43,6 @@ struct UsersView: View {
 
 private extension UsersView {
     
-    func usersList(_ users: [User]) -> some View {
-        List(users) { user in
-            HStack {
-                AsyncImage(url: URL(string: user.avatarURL))
-                Text(user.fullName)
-            }
-        }
-    }
-    
     func errorView(_ message: String) -> some View {
         VStack {
             Text("Something went wrong")
@@ -60,6 +51,7 @@ private extension UsersView {
         }
     }
 }
+
 
 #Preview {
     UsersView(
