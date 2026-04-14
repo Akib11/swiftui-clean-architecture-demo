@@ -19,6 +19,7 @@
 		E174C49A2F7D5C73000E9B6E /* UsersCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4992F7D5C73000E9B6E /* UsersCoordinatorView.swift */; };
 		E174C49C2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C49B2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift */; };
 		E174C49E2F7D5CD1000E9B6E /* FavouriteUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C49D2F7D5CD1000E9B6E /* FavouriteUsersView.swift */; };
+		E174C4F02F7EB79F000E9B6E /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4EF2F7EB79F000E9B6E /* UserListView.swift */; };
 		E1C8B2A42F604D7700367861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C8B2A02F604D7700367861 /* Assets.xcassets */; };
 		E1C8B2A52F604D7700367861 /* CleanArchitectureDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B2A12F604D7700367861 /* CleanArchitectureDemoAppApp.swift */; };
 		E1C8B2A62F604D7700367861 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B2A22F604D7700367861 /* UsersView.swift */; };
@@ -71,6 +72,7 @@
 		E174C4992F7D5C73000E9B6E /* UsersCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCoordinatorView.swift; sourceTree = "<group>"; };
 		E174C49B2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersCoordinatorView.swift; sourceTree = "<group>"; };
 		E174C49D2F7D5CD1000E9B6E /* FavouriteUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersView.swift; sourceTree = "<group>"; };
+		E174C4EF2F7EB79F000E9B6E /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		E1C8B2662F604C2100367861 /* CleanArchitectureDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanArchitectureDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8B2752F604C2300367861 /* CleanArchitectureDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8B27F2F604C2300367861 /* CleanArchitectureDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				E1C8B2A22F604D7700367861 /* UsersView.swift */,
+				E174C4EF2F7EB79F000E9B6E /* UserListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				E1C8B2DF2F60575200367861 /* AppCoordinator.swift in Sources */,
 				E174C4802F7D50F9000E9B6E /* UsersRepositoryProtocol.swift in Sources */,
 				E174C47E2F7D4F5A000E9B6E /* UsersAPI.swift in Sources */,
+				E174C4F02F7EB79F000E9B6E /* UserListView.swift in Sources */,
 				E174C49C2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift in Sources */,
 				E1C8B4A42F66FC8900367861 /* URLParameterEncoder.swift in Sources */,
 				E1C8B4A52F66FC8900367861 /* ParameterEncoding.swift in Sources */,
