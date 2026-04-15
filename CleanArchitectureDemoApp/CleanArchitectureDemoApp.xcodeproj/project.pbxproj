@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1718D242F8FD88700AF103A /* FavouriteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718D232F8FD88700AF103A /* FavouriteUser.swift */; };
+		E1718D272F8FD8BB00AF103A /* FavouriteUsersCacheServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718D262F8FD8BB00AF103A /* FavouriteUsersCacheServiceProtocol.swift */; };
+		E1718D292F8FD8D700AF103A /* FavouriteUsersCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718D282F8FD8D700AF103A /* FavouriteUsersCacheService.swift */; };
+		E1718D2B2F8FD8F000AF103A /* FavouriteUsersRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718D2A2F8FD8F000AF103A /* FavouriteUsersRepositoryProtocol.swift */; };
+		E1718D2D2F8FD90300AF103A /* FavouriteUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718D2C2F8FD90300AF103A /* FavouriteUsersRepository.swift */; };
+		E1718D2F2F8FD91600AF103A /* FavouriteUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718D2E2F8FD91600AF103A /* FavouriteUsersViewModel.swift */; };
+		E1718D322F8FDD3C00AF103A /* MockFavouriteUsersCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718D312F8FDD3C00AF103A /* MockFavouriteUsersCacheService.swift */; };
 		E174C4772F7D4B55000E9B6E /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4762F7D4B55000E9B6E /* AppEnvironment.swift */; };
 		E174C47A2F7D4E0C000E9B6E /* RandomUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4792F7D4E0C000E9B6E /* RandomUserResponse.swift */; };
 		E174C47C2F7D4EDF000E9B6E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C47B2F7D4EDF000E9B6E /* User.swift */; };
@@ -66,6 +73,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E1718D232F8FD88700AF103A /* FavouriteUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUser.swift; sourceTree = "<group>"; };
+		E1718D262F8FD8BB00AF103A /* FavouriteUsersCacheServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersCacheServiceProtocol.swift; sourceTree = "<group>"; };
+		E1718D282F8FD8D700AF103A /* FavouriteUsersCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersCacheService.swift; sourceTree = "<group>"; };
+		E1718D2A2F8FD8F000AF103A /* FavouriteUsersRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersRepositoryProtocol.swift; sourceTree = "<group>"; };
+		E1718D2C2F8FD90300AF103A /* FavouriteUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersRepository.swift; sourceTree = "<group>"; };
+		E1718D2E2F8FD91600AF103A /* FavouriteUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersViewModel.swift; sourceTree = "<group>"; };
+		E1718D312F8FDD3C00AF103A /* MockFavouriteUsersCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavouriteUsersCacheService.swift; sourceTree = "<group>"; };
 		E174C4762F7D4B55000E9B6E /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E174C4792F7D4E0C000E9B6E /* RandomUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserResponse.swift; sourceTree = "<group>"; };
 		E174C47B2F7D4EDF000E9B6E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -148,6 +162,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1718D252F8FD8AD00AF103A /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				E1718D262F8FD8BB00AF103A /* FavouriteUsersCacheServiceProtocol.swift */,
+				E1718D282F8FD8D700AF103A /* FavouriteUsersCacheService.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		E1718D302F8FDD2B00AF103A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E1718D312F8FDD3C00AF103A /* MockFavouriteUsersCacheService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E174C4782F7D4E02000E9B6E /* DTO */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				E1D300412F8E61BC001B8B97 /* CachedUser.swift */,
+				E1718D232F8FD88700AF103A /* FavouriteUser.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -324,6 +356,8 @@
 		E1C8B4932F66FA0E00367861 /* FavUsers */ = {
 			isa = PBXGroup;
 			children = (
+				E1718D302F8FDD2B00AF103A /* Services */,
+				E1718D252F8FD8AD00AF103A /* Cache */,
 				E1C8B4942F66FA1A00367861 /* View */,
 				E1C8B4972F66FA3E00367861 /* ViewModel */,
 				E1C8B4982F66FA4E00367861 /* Coordinator */,
@@ -343,6 +377,7 @@
 		E1C8B4972F66FA3E00367861 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E1718D2E2F8FD91600AF103A /* FavouriteUsersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -359,6 +394,8 @@
 		E1C8B4992F66FA5E00367861 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				E1718D2A2F8FD8F000AF103A /* FavouriteUsersRepositoryProtocol.swift */,
+				E1718D2C2F8FD90300AF103A /* FavouriteUsersRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -581,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1C8B2DF2F60575200367861 /* AppCoordinator.swift in Sources */,
+				E1718D272F8FD8BB00AF103A /* FavouriteUsersCacheServiceProtocol.swift in Sources */,
 				E174C4802F7D50F9000E9B6E /* UsersRepositoryProtocol.swift in Sources */,
 				E174C47E2F7D4F5A000E9B6E /* UsersAPI.swift in Sources */,
 				E174C4F02F7EB79F000E9B6E /* UserListView.swift in Sources */,
@@ -589,8 +627,10 @@
 				E1C8B4A42F66FC8900367861 /* URLParameterEncoder.swift in Sources */,
 				E1C8B4A52F66FC8900367861 /* ParameterEncoding.swift in Sources */,
 				E1D3003E2F8E60FC001B8B97 /* UsersRepository.swift in Sources */,
+				E1718D2B2F8FD8F000AF103A /* FavouriteUsersRepositoryProtocol.swift in Sources */,
 				E1C8B4A62F66FC8900367861 /* JSONParameterEncoder.swift in Sources */,
 				E1C8B48C2F66F9A800367861 /* AppTab.swift in Sources */,
+				E1718D2D2F8FD90300AF103A /* FavouriteUsersRepository.swift in Sources */,
 				E1C8B4BB2F66FEBB00367861 /* SessionStore.swift in Sources */,
 				E1D3003C2F8E60E3001B8B97 /* UsersCacheServiceProtocol.swift in Sources */,
 				E1C8B2A52F604D7700367861 /* CleanArchitectureDemoAppApp.swift in Sources */,
@@ -599,21 +639,25 @@
 				E1C8B48E2F66F9B400367861 /* RootTabView.swift in Sources */,
 				E1C8B4B72F66FCE100367861 /* NetworkLogger.swift in Sources */,
 				E1D300402F8E6160001B8B97 /* UsersServiceProtocol.swift in Sources */,
+				E1718D242F8FD88700AF103A /* FavouriteUser.swift in Sources */,
 				E1D300442F8E62B3001B8B97 /* MockUsersCacheService.swift in Sources */,
 				E1C8B4922F66F9CF00367861 /* CartCoordinatorView.swift in Sources */,
 				E1C8B2A62F604D7700367861 /* UsersView.swift in Sources */,
 				E1C8B4AD2F66FCAA00367861 /* Router.swift in Sources */,
+				E1718D2F2F8FD91600AF103A /* FavouriteUsersViewModel.swift in Sources */,
 				E1D300422F8E61BC001B8B97 /* CachedUser.swift in Sources */,
 				E1C8B4AE2F66FCAA00367861 /* HTTPMethod.swift in Sources */,
 				E174C4822F7D5114000E9B6E /* UsersService.swift in Sources */,
 				E174C4892F7D5732000E9B6E /* MockUsersService.swift in Sources */,
 				E1C8B4AF2F66FCAA00367861 /* HTTPTask.swift in Sources */,
+				E1718D292F8FD8D700AF103A /* FavouriteUsersCacheService.swift in Sources */,
 				E1C8B4B02F66FCAA00367861 /* EndPointType.swift in Sources */,
 				E174C4872F7D52D4000E9B6E /* UsersViewModel.swift in Sources */,
 				E174C4852F7D52AD000E9B6E /* ViewState.swift in Sources */,
 				E174C49A2F7D5C73000E9B6E /* UsersCoordinatorView.swift in Sources */,
 				E1C8B4B12F66FCAA00367861 /* RequestBuilder.swift in Sources */,
 				E174C47C2F7D4EDF000E9B6E /* User.swift in Sources */,
+				E1718D322F8FDD3C00AF103A /* MockFavouriteUsersCacheService.swift in Sources */,
 				E1C8B4BD2F66FEEE00367861 /* TokenProvider.swift in Sources */,
 				E1C8B4B42F66FCC900367861 /* APIError.swift in Sources */,
 				E174C49E2F7D5CD1000E9B6E /* FavouriteUsersView.swift in Sources */,

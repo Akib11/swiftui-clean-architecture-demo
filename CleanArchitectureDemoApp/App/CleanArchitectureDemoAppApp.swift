@@ -18,6 +18,6 @@ struct CleanArchitectureDemoAppApp: App {
                 RootTabView()
                     .environmentObject(coordinator)
             }
-            .modelContainer(for: CachedUser.self)
+            .modelContainer(for: [CachedUser.self, FavouriteUser.self])
         }
 }

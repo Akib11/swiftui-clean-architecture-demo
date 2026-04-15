@@ -10,12 +10,17 @@ import SwiftUI
 
 struct FavouriteUsersCoordinatorView: View {
     
-    let container: DependencyContainer
-    @State private var path = NavigationPath()
+    @StateObject private var viewModel: FavouriteUsersViewModel
+    
+    init(container: DependencyContainer) {
+        _viewModel = StateObject(
+            wrappedValue: container.makeFavouriteUsersViewModel()
+        )
+    }
     
     var body: some View {
-        NavigationStack(path: $path) {
-            FavouriteUsersView()
+        NavigationStack {
+            FavouriteUsersView(viewModel: viewModel)
                 .navigationTitle("Fav Users")
         }
     }

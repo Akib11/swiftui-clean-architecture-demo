@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+protocol FavouriteUsersRepositoryProtocol {
+    func getFavouriteUsers() throws -> [User]
+    func addToFavourites(user: User) throws
+    func removeFromFavourites(userId: String) throws
+    func isFavourite(userId: String) throws -> Bool
+}
