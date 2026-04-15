@@ -6,3 +6,47 @@
 //
 
 import Foundation
+import SwiftData
+
+final class DependencyContainer {
+    
+    private let modelContext: ModelContext
+    
+    init(modelContext: ModelContext) {
+        self.modelContext = modelContext
+    }
+    
+    func makeUsersService() -> UsersServiceProtocol {
+        UsersService(router: Router<UsersAPI>())
+    }
+    
+    func makeUsersCacheService() -> UsersCacheServiceProtocol {
+        UsersCacheService(modelContext: modelContext)
+    }
+    
+    func makeUsersRepository() -> UsersRepositoryProtocol {
+        UsersRepository(
+            remoteService: makeUsersService(),
+            cacheService: makeUsersCacheService()
+        )
+    }
+    
+    func makeUsersViewModel() -> UsersViewModel {
+        UsersViewModel(
+            repository: makeUsersRepository(),
+            favouritesRepository: makeFavouriteUsersRepository()
+        )
+    }
+    
+    func makeFavouriteUsersCacheService() -> FavouriteUsersCacheServiceProtocol {
+        FavouriteUsersCacheService(modelContext: modelContext)
+    }
+
+    func makeFavouriteUsersRepository() -> FavouriteUsersRepositoryProtocol {
+        FavouriteUsersRepository(cacheService: makeFavouriteUsersCacheService())
+    }
+
+    func makeFavouriteUsersViewModel() -> FavouriteUsersViewModel {
+        FavouriteUsersViewModel(repository: makeFavouriteUsersRepository())
+    }
+}

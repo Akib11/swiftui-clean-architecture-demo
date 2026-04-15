@@ -11,9 +11,13 @@ import SwiftData
 @main
 struct CleanArchitectureDemoAppApp: App {
 
-    var body: some Scene {
-        WindowGroup {
-            DashboardView()
+    @StateObject private var coordinator = AppCoordinator()
+        
+        var body: some Scene {
+            WindowGroup {
+                RootTabView()
+                    .environmentObject(coordinator)
+            }
+            .modelContainer(for: [CachedUser.self, FavouriteUser.self])
         }
-    }
 }

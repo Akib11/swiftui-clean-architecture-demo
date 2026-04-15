@@ -6,3 +6,6 @@
 //
 
 import Foundation
+import Combine
+
+final class AppCoordinator: ObservableObject {}
