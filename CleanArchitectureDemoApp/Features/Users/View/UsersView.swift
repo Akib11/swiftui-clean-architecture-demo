@@ -32,7 +32,15 @@ struct UsersView: View {
             ProgressView()
             
         case .success(let users):
-            UserListView(users: users)
+            UserListView(
+                users: users,
+                isFavourite: { user in
+                    viewModel.isFavourite(user)
+                },
+                onFavouriteTapped: { user in
+                    viewModel.toggleFavourite(user: user)
+                }
+            )
             
         case .failure(let message):
             errorView(message)
@@ -54,11 +62,18 @@ private extension UsersView {
 
 
 #Preview {
-    UsersView(
+    let favouritesCache = MockFavouriteUsersCacheService()
+    try? favouritesCache.save(user: User.samples[0])
+    try? favouritesCache.save(user: User.samples[1])
+    
+    return UsersView(
         viewModel: UsersViewModel(
             repository: UsersRepository(
                 remoteService: MockUsersService(),
                 cacheService: MockUsersCacheService()
+            ),
+            favouritesRepository: FavouriteUsersRepository(
+                cacheService: favouritesCache
             )
         )
     )

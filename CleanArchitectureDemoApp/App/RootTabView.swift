@@ -22,12 +22,6 @@ struct RootTabView: View {
                     Label(AppTab.users.title, systemImage: AppTab.users.systemImage)
                 }
                 .tag(AppTab.users)
-            
-            FavouriteUsersCoordinatorView(container: container)
-                .tabItem {
-                    Label(AppTab.favouriteUsers.title, systemImage: AppTab.favouriteUsers.systemImage)
-                }
-                .tag(AppTab.favouriteUsers)
         }
     }
 }

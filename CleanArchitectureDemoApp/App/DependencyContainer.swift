@@ -32,6 +32,21 @@ final class DependencyContainer {
     }
     
     func makeUsersViewModel() -> UsersViewModel {
-        UsersViewModel(repository: makeUsersRepository())
+        UsersViewModel(
+            repository: makeUsersRepository(),
+            favouritesRepository: makeFavouriteUsersRepository()
+        )
+    }
+    
+    func makeFavouriteUsersCacheService() -> FavouriteUsersCacheServiceProtocol {
+        FavouriteUsersCacheService(modelContext: modelContext)
+    }
+
+    func makeFavouriteUsersRepository() -> FavouriteUsersRepositoryProtocol {
+        FavouriteUsersRepository(cacheService: makeFavouriteUsersCacheService())
+    }
+
+    func makeFavouriteUsersViewModel() -> FavouriteUsersViewModel {
+        FavouriteUsersViewModel(repository: makeFavouriteUsersRepository())
     }
 }
