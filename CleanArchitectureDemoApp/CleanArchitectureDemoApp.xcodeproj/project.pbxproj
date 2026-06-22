@@ -22,7 +22,6 @@
 		E174C4822F7D5114000E9B6E /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4812F7D5114000E9B6E /* UsersService.swift */; };
 		E174C4852F7D52AD000E9B6E /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4842F7D52AD000E9B6E /* ViewState.swift */; };
 		E174C4872F7D52D4000E9B6E /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4862F7D52D4000E9B6E /* UsersViewModel.swift */; };
-		E174C4892F7D5732000E9B6E /* MockUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4882F7D5732000E9B6E /* MockUsersService.swift */; };
 		E174C49A2F7D5C73000E9B6E /* UsersCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4992F7D5C73000E9B6E /* UsersCoordinatorView.swift */; };
 		E174C49C2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C49B2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift */; };
 		E174C49E2F7D5CD1000E9B6E /* FavouriteUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C49D2F7D5CD1000E9B6E /* FavouriteUsersView.swift */; };
@@ -47,12 +46,17 @@
 		E1C8B4B72F66FCE100367861 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4B62F66FCE100367861 /* NetworkLogger.swift */; };
 		E1C8B4BB2F66FEBB00367861 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4BA2F66FEB800367861 /* SessionStore.swift */; };
 		E1C8B4BD2F66FEEE00367861 /* TokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8B4BC2F66FEEE00367861 /* TokenProvider.swift */; };
+		E1D29EBC2FE88B63001A9DBF /* GetUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D29EBB2FE88B63001A9DBF /* GetUsersUseCase.swift */; };
+		E1D29EBE2FE88B7B001A9DBF /* GetUsersUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D29EBD2FE88B7B001A9DBF /* GetUsersUseCaseProtocol.swift */; };
+		E1D29EC12FE9A3C1001A9DBF /* GetFavouriteUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D29EC02FE9A3AF001A9DBF /* GetFavouriteUsersUseCase.swift */; };
+		E1D29EC32FE9A402001A9DBF /* AddFavouriteUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D29EC22FE9A402001A9DBF /* AddFavouriteUserUseCase.swift */; };
+		E1D29EC52FE9A430001A9DBF /* RemoveFavouriteUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D29EC42FE9A430001A9DBF /* RemoveFavouriteUserUseCase.swift */; };
+		E1D29EC72FE9A44E001A9DBF /* IsFavouriteUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D29EC62FE9A44E001A9DBF /* IsFavouriteUserUseCase.swift */; };
 		E1D3003A2F8E6041001B8B97 /* UsersCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D300392F8E6041001B8B97 /* UsersCacheService.swift */; };
 		E1D3003C2F8E60E3001B8B97 /* UsersCacheServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3003B2F8E60E3001B8B97 /* UsersCacheServiceProtocol.swift */; };
 		E1D3003E2F8E60FC001B8B97 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3003D2F8E60FC001B8B97 /* UsersRepository.swift */; };
 		E1D300402F8E6160001B8B97 /* UsersServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3003F2F8E6160001B8B97 /* UsersServiceProtocol.swift */; };
 		E1D300422F8E61BC001B8B97 /* CachedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D300412F8E61BC001B8B97 /* CachedUser.swift */; };
-		E1D300442F8E62B3001B8B97 /* MockUsersCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D300432F8E62B3001B8B97 /* MockUsersCacheService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +92,6 @@
 		E174C4812F7D5114000E9B6E /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		E174C4842F7D52AD000E9B6E /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		E174C4862F7D52D4000E9B6E /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
-		E174C4882F7D5732000E9B6E /* MockUsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsersService.swift; sourceTree = "<group>"; };
 		E174C4992F7D5C73000E9B6E /* UsersCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCoordinatorView.swift; sourceTree = "<group>"; };
 		E174C49B2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersCoordinatorView.swift; sourceTree = "<group>"; };
 		E174C49D2F7D5CD1000E9B6E /* FavouriteUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersView.swift; sourceTree = "<group>"; };
@@ -116,12 +119,17 @@
 		E1C8B4B62F66FCE100367861 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		E1C8B4BA2F66FEB800367861 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		E1C8B4BC2F66FEEE00367861 /* TokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProvider.swift; sourceTree = "<group>"; };
+		E1D29EBB2FE88B63001A9DBF /* GetUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCase.swift; sourceTree = "<group>"; };
+		E1D29EBD2FE88B7B001A9DBF /* GetUsersUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCaseProtocol.swift; sourceTree = "<group>"; };
+		E1D29EC02FE9A3AF001A9DBF /* GetFavouriteUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavouriteUsersUseCase.swift; sourceTree = "<group>"; };
+		E1D29EC22FE9A402001A9DBF /* AddFavouriteUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavouriteUserUseCase.swift; sourceTree = "<group>"; };
+		E1D29EC42FE9A430001A9DBF /* RemoveFavouriteUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavouriteUserUseCase.swift; sourceTree = "<group>"; };
+		E1D29EC62FE9A44E001A9DBF /* IsFavouriteUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavouriteUserUseCase.swift; sourceTree = "<group>"; };
 		E1D300392F8E6041001B8B97 /* UsersCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCacheService.swift; sourceTree = "<group>"; };
 		E1D3003B2F8E60E3001B8B97 /* UsersCacheServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCacheServiceProtocol.swift; sourceTree = "<group>"; };
 		E1D3003D2F8E60FC001B8B97 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		E1D3003F2F8E6160001B8B97 /* UsersServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersServiceProtocol.swift; sourceTree = "<group>"; };
 		E1D300412F8E61BC001B8B97 /* CachedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedUser.swift; sourceTree = "<group>"; };
-		E1D300432F8E62B3001B8B97 /* MockUsersCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsersCacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -280,9 +288,10 @@
 		E1C8B2D62F6055B500367861 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				E1C8B2DC2F60569900367861 /* Coordinator */,
 				E1C8B2DA2F60567B00367861 /* View */,
 				E1C8B2DB2F60568100367861 /* ViewModel */,
-				E1C8B2DC2F60569900367861 /* Coordinator */,
+				E1D29EBA2FE88B53001A9DBF /* UseCases */,
 				E1D300452F8E638F001B8B97 /* Services */,
 				E1C8B2DD2F6056A200367861 /* Repository */,
 				E1D300462F8E63BF001B8B97 /* Cache */,
@@ -356,12 +365,13 @@
 		E1C8B4932F66FA0E00367861 /* FavUsers */ = {
 			isa = PBXGroup;
 			children = (
-				E1718D302F8FDD2B00AF103A /* Services */,
-				E1718D252F8FD8AD00AF103A /* Cache */,
+				E1C8B4982F66FA4E00367861 /* Coordinator */,
 				E1C8B4942F66FA1A00367861 /* View */,
 				E1C8B4972F66FA3E00367861 /* ViewModel */,
-				E1C8B4982F66FA4E00367861 /* Coordinator */,
+				E1D29EBF2FE88E1C001A9DBF /* UseCases */,
+				E1718D302F8FDD2B00AF103A /* Services */,
 				E1C8B4992F66FA5E00367861 /* Repository */,
+				E1718D252F8FD8AD00AF103A /* Cache */,
 			);
 			path = FavUsers;
 			sourceTree = "<group>";
@@ -455,12 +465,31 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		E1D29EBA2FE88B53001A9DBF /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E1D29EBB2FE88B63001A9DBF /* GetUsersUseCase.swift */,
+				E1D29EBD2FE88B7B001A9DBF /* GetUsersUseCaseProtocol.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		E1D29EBF2FE88E1C001A9DBF /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E1D29EC02FE9A3AF001A9DBF /* GetFavouriteUsersUseCase.swift */,
+				E1D29EC22FE9A402001A9DBF /* AddFavouriteUserUseCase.swift */,
+				E1D29EC42FE9A430001A9DBF /* RemoveFavouriteUserUseCase.swift */,
+				E1D29EC62FE9A44E001A9DBF /* IsFavouriteUserUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		E1D300452F8E638F001B8B97 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				E174C4812F7D5114000E9B6E /* UsersService.swift */,
 				E1D3003F2F8E6160001B8B97 /* UsersServiceProtocol.swift */,
-				E174C4882F7D5732000E9B6E /* MockUsersService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -470,7 +499,6 @@
 			children = (
 				E1D300392F8E6041001B8B97 /* UsersCacheService.swift */,
 				E1D3003B2F8E60E3001B8B97 /* UsersCacheServiceProtocol.swift */,
-				E1D300432F8E62B3001B8B97 /* MockUsersCacheService.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -618,6 +646,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1C8B2DF2F60575200367861 /* AppCoordinator.swift in Sources */,
+				E1D29EBE2FE88B7B001A9DBF /* GetUsersUseCaseProtocol.swift in Sources */,
 				E1718D272F8FD8BB00AF103A /* FavouriteUsersCacheServiceProtocol.swift in Sources */,
 				E174C4802F7D50F9000E9B6E /* UsersRepositoryProtocol.swift in Sources */,
 				E174C47E2F7D4F5A000E9B6E /* UsersAPI.swift in Sources */,
@@ -625,6 +654,7 @@
 				E174C49C2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift in Sources */,
 				E1D3003A2F8E6041001B8B97 /* UsersCacheService.swift in Sources */,
 				E1C8B4A42F66FC8900367861 /* URLParameterEncoder.swift in Sources */,
+				E1D29EC12FE9A3C1001A9DBF /* GetFavouriteUsersUseCase.swift in Sources */,
 				E1C8B4A52F66FC8900367861 /* ParameterEncoding.swift in Sources */,
 				E1D3003E2F8E60FC001B8B97 /* UsersRepository.swift in Sources */,
 				E1718D2B2F8FD8F000AF103A /* FavouriteUsersRepositoryProtocol.swift in Sources */,
@@ -640,7 +670,6 @@
 				E1C8B4B72F66FCE100367861 /* NetworkLogger.swift in Sources */,
 				E1D300402F8E6160001B8B97 /* UsersServiceProtocol.swift in Sources */,
 				E1718D242F8FD88700AF103A /* FavouriteUser.swift in Sources */,
-				E1D300442F8E62B3001B8B97 /* MockUsersCacheService.swift in Sources */,
 				E1C8B4922F66F9CF00367861 /* CartCoordinatorView.swift in Sources */,
 				E1C8B2A62F604D7700367861 /* UsersView.swift in Sources */,
 				E1C8B4AD2F66FCAA00367861 /* Router.swift in Sources */,
@@ -648,19 +677,22 @@
 				E1D300422F8E61BC001B8B97 /* CachedUser.swift in Sources */,
 				E1C8B4AE2F66FCAA00367861 /* HTTPMethod.swift in Sources */,
 				E174C4822F7D5114000E9B6E /* UsersService.swift in Sources */,
-				E174C4892F7D5732000E9B6E /* MockUsersService.swift in Sources */,
 				E1C8B4AF2F66FCAA00367861 /* HTTPTask.swift in Sources */,
 				E1718D292F8FD8D700AF103A /* FavouriteUsersCacheService.swift in Sources */,
 				E1C8B4B02F66FCAA00367861 /* EndPointType.swift in Sources */,
 				E174C4872F7D52D4000E9B6E /* UsersViewModel.swift in Sources */,
+				E1D29EC52FE9A430001A9DBF /* RemoveFavouriteUserUseCase.swift in Sources */,
 				E174C4852F7D52AD000E9B6E /* ViewState.swift in Sources */,
 				E174C49A2F7D5C73000E9B6E /* UsersCoordinatorView.swift in Sources */,
 				E1C8B4B12F66FCAA00367861 /* RequestBuilder.swift in Sources */,
 				E174C47C2F7D4EDF000E9B6E /* User.swift in Sources */,
+				E1D29EC72FE9A44E001A9DBF /* IsFavouriteUserUseCase.swift in Sources */,
 				E1718D322F8FDD3C00AF103A /* MockFavouriteUsersCacheService.swift in Sources */,
+				E1D29EBC2FE88B63001A9DBF /* GetUsersUseCase.swift in Sources */,
 				E1C8B4BD2F66FEEE00367861 /* TokenProvider.swift in Sources */,
 				E1C8B4B42F66FCC900367861 /* APIError.swift in Sources */,
 				E174C49E2F7D5CD1000E9B6E /* FavouriteUsersView.swift in Sources */,
+				E1D29EC32FE9A402001A9DBF /* AddFavouriteUserUseCase.swift in Sources */,
 				E174C4772F7D4B55000E9B6E /* AppEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

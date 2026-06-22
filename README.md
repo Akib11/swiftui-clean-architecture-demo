@@ -1,209 +1,411 @@
+![Platform](https://img.shields.io/badge/iOS-18%2B-blue)
+![Swift](https://img.shields.io/badge/Swift-6-orange)
+![Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture-green)
+![UI](https://img.shields.io/badge/UI-SwiftUI-blue)
+
 # SwiftUI Clean Architecture Demo
 
-A production-style iOS demo app showcasing **MVVM-C**, **Repository pattern**, **offline-first architecture using SwiftData**, and **modular feature design**.
+A production-style iOS demo application showcasing **Clean Architecture**, **MVVM-C**, **Use Cases**, **Repository Pattern**, **SwiftData**, and **offline-first design**.
+
+The goal of this project is to demonstrate scalable architecture, separation of concerns, testability, and modern SwiftUI development practices.
 
 ---
 
-## Demo
+# 🚀 Features
 
-### App Preview
-
-> Add your recorded app GIF here
-
-```md
-![App Demo](Assets/demo.gif)
-```
-
-Example:
-
-![App Demo](Assets/demo.gif)
-
----
-
-## Screenshots
-
-> Replace these with your real screenshots
-
-```md
-<p align="center">
-  <img src="Assets/users-screen.png" width="250" />
-  <img src="Assets/favourites-screen.png" width="250" />
-  <img src="Assets/offline-screen.png" width="250" />
-</p>
-```
-
-<p align="center">
-  <img src="Assets/users-screen.png" width="250" />
-  <img src="Assets/favourites-screen.png" width="250" />
-  <img src="Assets/offline-screen.png" width="250" />
-</p>
+- Users list from remote API
+- Offline-first architecture
+- SwiftData local persistence
+- Favourite users management
+- MVVM-C navigation
+- Clean Architecture
+- Use Case pattern
+- Repository pattern
+- Dependency Injection
+- State-driven UI using ViewState
+- Modular feature organisation
 
 ---
 
-## Features
+# 🏗 Architecture
 
-* Users list (remote + cached)
-* Offline support (SwiftData fallback)
-* Favourite users (local persistence)
-* Tab-based navigation (MVVM-C)
-* State-driven UI using ViewState
-* Dependency Injection with a central container
-
----
-
-## Architecture Diagram
-
-### High-Level Flow
+## Clean Architecture Flow
 
 ```mermaid
 flowchart TD
-    A[View] --> B[ViewModel]
-    B --> C[Repository]
-    C --> D[Remote Service]
-    C --> E[Cache Service]
-    D --> F[Router / Endpoint]
-    E --> G[SwiftData]
+    A[Coordinator] --> B[View]
+    B --> C[ViewModel]
+    C --> D[UseCase]
+    D --> E[Repository]
+    E --> F[Remote Service]
+    E --> G[Cache Service]
+    F --> H[Router / Endpoint]
+    G --> I[SwiftData]
 ```
 
-### App Navigation Flow
+## Navigation Flow
 
 ```mermaid
 flowchart TD
-    A[CleanArchitectureDemoAppApp] --> B[RootTabView]
-    B --> C[UsersCoordinatorView]
-    B --> D[FavouriteUsersCoordinatorView]
-    C --> E[UsersView]
-    E --> F[UsersViewModel]
-    D --> G[FavouriteUsersView]
-    G --> H[FavouriteUsersViewModel]
+    A[CleanArchitectureDemoAppApp] --> B[AppCoordinator]
+    B --> C[RootTabView]
+
+    C --> D[UsersCoordinatorView]
+    C --> E[FavouriteUsersCoordinatorView]
+
+    D --> F[UsersView]
+    F --> G[UsersViewModel]
+
+    E --> H[FavouriteUsersView]
+    H --> I[FavouriteUsersViewModel]
 ```
 
 ---
 
-## Architecture Overview
+# 📐 Architecture Overview
 
-The app follows a **layered architecture** to separate concerns and improve scalability.
+The application follows a Clean Architecture inspired approach combined with MVVM-C.
 
 ```text
+Coordinator
+    ↓
 View
- ↓
+    ↓
 ViewModel
- ↓
+    ↓
+UseCase
+    ↓
 Repository
- ↓          ↓
-Remote      Cache
-(Service)   (SwiftData)
+   ↙        ↘
+Service    Cache
+(API)      (SwiftData)
 ```
 
-### Responsibilities
+This structure provides:
 
-* **View** → Displays UI and forwards user actions
-* **ViewModel** → Handles UI state and presentation logic
-* **Repository** → Orchestrates data sources
-* **Service** → Performs network requests
-* **Cache Service** → Reads/writes local data via SwiftData
+- Separation of concerns
+- Testability
+- Scalability
+- Reusability
+- Clear ownership of responsibilities
 
 ---
 
-## Project Structure
+# 🧩 Layer Responsibilities
+
+## Coordinator
+
+Responsible for:
+
+- Navigation
+- Flow orchestration
+- Screen composition
+- Dependency injection entry points
+
+Examples:
+
+- AppCoordinator
+- UsersCoordinatorView
+- FavouriteUsersCoordinatorView
+
+The coordinator layer owns navigation and screen creation while keeping navigation logic out of views.
+
+---
+
+## View
+
+Responsible for:
+
+- Rendering UI
+- Handling user interactions
+- Observing ViewModel state
+
+Views contain no business logic.
+
+Examples:
+
+- UsersView
+- UserListView
+- FavouriteUsersView
+
+---
+
+## ViewModel
+
+Responsible for:
+
+- Presentation logic
+- UI state management
+- Executing use cases
+- Transforming data into display-ready state
+
+ViewModels do not communicate directly with services or storage.
+
+Examples:
+
+- UsersViewModel
+- FavouriteUsersViewModel
+
+---
+
+## Use Cases
+
+Use Cases represent business actions and application capabilities.
+
+Examples:
+
+- GetUsersUseCase
+- GetFavouriteUsersUseCase
+- AddFavouriteUserUseCase
+- RemoveFavouriteUserUseCase
+
+Benefits:
+
+- Isolated business logic
+- Easy unit testing
+- Reusable business operations
+- Clear intent
+
+---
+
+## Repository
+
+Repositories orchestrate data sources.
+
+Responsibilities:
+
+- Fetch data from APIs
+- Read local cache
+- Handle fallback strategies
+- Hide implementation details
+
+Examples:
+
+- UsersRepository
+- FavouriteUsersRepository
+
+Repositories act as the single source of truth for ViewModels and Use Cases.
+
+---
+
+## Services
+
+Services handle implementation details.
+
+### Remote Services
+
+Examples:
+
+- UsersService
+
+Responsibilities:
+
+- API communication
+- Request construction
+- Response decoding
+
+### Local Services
+
+Examples:
+
+- UsersCacheService
+- FavouriteUsersCacheService
+
+Responsibilities:
+
+- SwiftData operations
+- Local persistence
+- Cache retrieval
+
+---
+
+## Storage
+
+SwiftData is used for local persistence.
+
+Stored entities:
+
+- CachedUser
+- FavouriteUser
+
+The storage layer remains hidden behind cache services and repositories.
+
+---
+
+# 📂 Project Structure
 
 ```text
 App
+├── AppCoordinator
+├── DependencyContainer
+├── RootTabView
+
 Core
- ├── Networking
- ├── Storage
- └── DesignSystem
+├── Networking
+├── Storage
+└── DesignSystem
 
 Features
- ├── Users
- │   ├── View
- │   ├── ViewModel
- │   ├── Coordinator
- │   ├── Repository
- │   ├── Services
- │   └── Cache
- │
- └── FavUsers
-     ├── View
-     ├── ViewModel
-     ├── Coordinator
-     ├── Repository
-     └── Cache
+├── Users
+│   ├── Coordinator
+│   ├── View
+│   ├── ViewModel
+│   ├── UseCases
+│   ├── Repository
+│   ├── Services
+│   └── Cache
+│
+└── FavUsers
+    ├── Coordinator
+    ├── View
+    ├── ViewModel
+    ├── UseCases
+    ├── Repository
+    └── Cache
 
 Models
-Utilities
 Resources
+Utilities
 ```
 
 ---
 
-## Data Flow
+# 🔗 Dependency Injection
 
-1. The user interacts with the **View**
-2. The View forwards the action to the **ViewModel**
-3. The ViewModel asks the **Repository** for data
-4. The Repository decides whether to:
+A central `DependencyContainer` is responsible for constructing:
 
-   * fetch from the network
-   * or return cached local data
-5. API DTOs are mapped into **Domain Models**
-6. The View reacts to changes through **ViewState**
+- Services
+- Cache Services
+- Repositories
+- Use Cases
+- ViewModels
+
+Benefits:
+
+- Loose coupling
+- Easier testing
+- Mock-friendly architecture
+- Explicit dependencies
+- Improved maintainability
 
 ---
 
-## Networking Layer
+# 🔄 Data Flow
 
-The networking layer uses a **Router + Endpoint abstraction**.
-
-### Highlights
-
-* Generic request flow
-* Endpoint-based API definitions
-* Parameter encoding
-* Header injection
-* Auth-ready design through `requiresAuth`
-
-### Example Flow
+## Loading Users
 
 ```text
-ViewModel → Repository → Router → Endpoint → API
+UsersView
+    ↓
+UsersViewModel
+    ↓
+GetUsersUseCase
+    ↓
+UsersRepository
+   ↙           ↘
+API         SwiftData Cache
 ```
 
----
-
-## Offline Strategy
-
-The app uses an **offline-first approach**:
-
-* Remote data is fetched through `UsersService`
-* Data is cached locally via SwiftData
-* If the network request fails, the repository falls back to cached data
+## Adding a Favourite
 
 ```text
-Online  → fetch → cache → display
-Offline → fail  → load cache → display
+UsersView
+    ↓
+UsersViewModel
+    ↓
+AddFavouriteUserUseCase
+    ↓
+FavouriteUsersRepository
+    ↓
+FavouriteUsersCacheService
+    ↓
+SwiftData
 ```
-
-This keeps the app functional even without internet connectivity.
 
 ---
 
-## Favourites Feature
+# 🌐 Networking Layer
+
+The networking layer uses a Router + Endpoint abstraction.
+
+### Features
+
+- Generic request execution
+- Endpoint-based API definitions
+- Request parameter encoding
+- Header injection
+- Auth-ready architecture
+- Async/Await support
+
+### Flow
+
+```text
+ViewModel
+    ↓
+UseCase
+    ↓
+Repository
+    ↓
+Router
+    ↓
+Endpoint
+    ↓
+API
+```
+
+---
+
+# 💾 Offline Strategy
+
+The application follows an offline-first approach.
+
+### Online
+
+```text
+API
+ ↓
+Repository
+ ↓
+SwiftData Cache
+ ↓
+UI
+```
+
+### Offline
+
+```text
+API Request Fails
+ ↓
+Repository
+ ↓
+SwiftData Cache
+ ↓
+UI
+```
+
+This ensures the application remains functional without internet connectivity.
+
+---
+
+# ❤️ Favourites Feature
 
 The favourites flow is intentionally local-first.
 
-### Behaviour
+### Features
 
-* A user can be marked as favourite from the Users list
-* Favourites are persisted in SwiftData
-* Favourite users are shown in a dedicated tab
-* This demonstrates feature-to-feature interaction while keeping layers isolated
+- Mark users as favourite
+- Persist favourites locally
+- Dedicated favourites tab
+- Real-time UI updates
+- SwiftData-backed storage
+
+This demonstrates feature-to-feature communication while preserving architectural boundaries.
 
 ---
 
-## ViewState Pattern
+# 🎭 ViewState Pattern
 
-UI state is driven using a generic `ViewState`.
+UI state is managed using a generic ViewState.
 
 ```swift
 enum ViewState<T> {
@@ -214,103 +416,115 @@ enum ViewState<T> {
 }
 ```
 
-### Why this helps
-
-* predictable rendering
-* clear loading/error handling
-* easier unit testing
-* simpler state management in SwiftUI
-
----
-
-## Dependency Injection
-
-A `DependencyContainer` is used to construct:
-
-* network services
-* cache services
-* repositories
-* view models
-
 ### Benefits
 
-* loose coupling
-* easier mocking
-* better testability
-* clearer ownership of dependencies
+- Predictable rendering
+- Explicit loading states
+- Consistent error handling
+- Simpler SwiftUI updates
+- Easier testing
 
 ---
 
-## Testing Strategy
+# 🧪 Testing Strategy
 
-The architecture is designed to be testable through:
+The architecture is designed for unit testing through:
 
-* protocol-based abstractions
-* mock services
-* repository injection
-* isolated ViewModel logic
+- Protocol-based abstractions
+- Mock services
+- Mock repositories
+- Dependency injection
+- Isolated business logic
 
-### Example test candidates
+Example test targets:
 
-* `UsersRepositoryTests`
-* `UsersViewModelTests`
-* `FavouriteUsersRepositoryTests`
+- UsersRepositoryTests
+- UsersViewModelTests
+- GetUsersUseCaseTests
+- FavouriteUsersRepositoryTests
 
 ---
 
-## Why This Architecture?
+## Test Coverage
+
+The project includes unit tests covering:
+
+- ViewModels
+- Use Cases
+- Repositories
+
+Coverage focuses on business logic and data orchestration layers rather than UI rendering.
+
+
+# 🤔 Why This Architecture?
 
 This architecture was chosen to:
 
-* scale features independently
-* support offline-first behaviour
-* keep business logic out of views
-* improve long-term maintainability
-* make the app easier to test and evolve
+- Scale features independently
+- Support offline-first behaviour
+- Improve maintainability
+- Improve testability
+- Isolate business rules
+- Reduce coupling
+- Encourage reusable components
 
 ---
 
-## Summary
+# 📋 Summary
 
 This project demonstrates:
 
-* Clean Architecture principles
-* MVVM-C navigation
-* Repository + Service pattern
-* Offline-first data handling
-* SwiftData integration
-* Modular feature design
-* Local persistence for favourites
+- Clean Architecture
+- MVVM-C Navigation
+- Use Case Pattern
+- Repository Pattern
+- Dependency Injection
+- Offline-first Architecture
+- SwiftData Persistence
+- Feature Modularisation
+- Local Favourites Management
+- State-driven UI
+- Testable Architecture
+- Modern Swift Concurrency
 
 ---
 
-## Getting Started
+# 🛠 Getting Started
 
-### Requirements
+## Requirements
 
-* Xcode 16+
-* iOS 18+
-* Swift 6+
+- Xcode 16+
+- iOS 18+
+- Swift 6+
 
-### Run
+## Run
 
 1. Clone the repository
 2. Open the project in Xcode
-3. Build and run on Simulator or device
+3. Build and run on Simulator or Device
 
 ---
 
-## Author
+# 👨‍💻 Author
 
 **Akib Quraishi**
-iOS Developer — Swift, SwiftUI, Clean Architecture
 
-Portfolio: `www.akibmakesapps.co.uk`
+Senior iOS Developer
+
+Technologies:
+
+- Swift
+- SwiftUI
+- UIKit
+- Combine
+- SwiftData
+- Clean Architecture
+- MVVM-C
 
 ---
 
-## Notes
+# 📝 Notes
 
-This project is intended as an architecture-focused demo for portfolio and interview review.
-The emphasis is on **structure, scalability, and engineering practices** rather than feature completeness.
+This project is intentionally focused on architecture and engineering practices rather than feature completeness.
 
+The primary objective is to demonstrate production-style iOS application architecture, maintainability, testability, and scalability.

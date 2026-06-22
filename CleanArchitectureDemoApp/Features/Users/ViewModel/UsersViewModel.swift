@@ -11,8 +11,10 @@ import Combine
 @MainActor
 final class UsersViewModel: ObservableObject {
     
-    private let repository: UsersRepositoryProtocol
-    private let favouritesRepository: FavouriteUsersRepositoryProtocol
+    private let getUsersUseCase: GetUsersUseCaseProtocol
+    private let getFavouriteUsersUseCase: GetFavouriteUsersUseCaseProtocol
+    private let addFavouriteUserUseCase: AddFavouriteUserUseCaseProtocol
+    private let removeFavouriteUserUseCase: RemoveFavouriteUserUseCaseProtocol
     
     @Published var state: ViewState<[User]> = .idle
     @Published var favouriteIds: Set<String> = []
@@ -20,21 +22,29 @@ final class UsersViewModel: ObservableObject {
     private var page = 1
     
     init(
-        repository: UsersRepositoryProtocol,
-        favouritesRepository: FavouriteUsersRepositoryProtocol
+        getUsersUseCase: GetUsersUseCaseProtocol,
+        getFavouriteUsersUseCase: GetFavouriteUsersUseCaseProtocol,
+        addFavouriteUserUseCase: AddFavouriteUserUseCaseProtocol,
+        removeFavouriteUserUseCase: RemoveFavouriteUserUseCaseProtocol
     ) {
-        self.repository = repository
-        self.favouritesRepository = favouritesRepository
+        self.getUsersUseCase = getUsersUseCase
+        self.getFavouriteUsersUseCase = getFavouriteUsersUseCase
+        self.addFavouriteUserUseCase = addFavouriteUserUseCase
+        self.removeFavouriteUserUseCase = removeFavouriteUserUseCase
     }
     
     func loadUsers() async {
+        
         if case .loading = state { return }
         
         state = .loading
         
         do {
-            let users = try await repository.getUsers(page: page, results: 20)
-            print("🔴🔴🔴🔴 User: ", users.count)
+            let users = try await getUsersUseCase.execute(
+                page: page,
+                results: 20
+            )
+            
             state = .success(users)
             page += 1
             
@@ -47,24 +57,34 @@ final class UsersViewModel: ObservableObject {
     
     func loadFavourites() {
         do {
-            let favourites = try favouritesRepository.getFavouriteUsers()
-            favouriteIds = Set(favourites.map { $0.id })
+            let favourites = try getFavouriteUsersUseCase.execute()
+            favouriteIds = Set(favourites.map(\.id))
         } catch {
-            print(error)
+            print("Failed loading favourites: \(error)")
         }
     }
     
     func toggleFavourite(user: User) {
         do {
             if favouriteIds.contains(user.id) {
-                try favouritesRepository.removeFromFavourites(userId: user.id)
+                
+                try removeFavouriteUserUseCase.execute(
+                    userId: user.id
+                )
+                
                 favouriteIds.remove(user.id)
+                
             } else {
-                try favouritesRepository.addToFavourites(user: user)
+                
+                try addFavouriteUserUseCase.execute(
+                    user: user
+                )
+                
                 favouriteIds.insert(user.id)
             }
+            
         } catch {
-            print(error)
+            print("Failed toggling favourite: \(error)")
         }
     }
     

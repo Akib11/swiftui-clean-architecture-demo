@@ -61,20 +61,20 @@ private extension UsersView {
 }
 
 
-#Preview {
-    let favouritesCache = MockFavouriteUsersCacheService()
-    try? favouritesCache.save(user: User.samples[0])
-    try? favouritesCache.save(user: User.samples[1])
-    
-    return UsersView(
-        viewModel: UsersViewModel(
-            repository: UsersRepository(
-                remoteService: MockUsersService(),
-                cacheService: MockUsersCacheService()
-            ),
-            favouritesRepository: FavouriteUsersRepository(
-                cacheService: favouritesCache
-            )
-        )
-    )
-}
+//#Preview {
+//    let favouritesCache = MockFavouriteUsersCacheService()
+//    try? favouritesCache.save(user: User.samples[0])
+//    try? favouritesCache.save(user: User.samples[1])
+//    
+//    return UsersView(
+//        viewModel: UsersViewModel(
+//            repository: UsersRepository(
+//                remoteService: MockUsersService(),
+//                cacheService: MockUsersCacheService()
+//            ),
+//            favouritesRepository: FavouriteUsersRepository(
+//                cacheService: favouritesCache
+//            )
+//        )
+//    )
+//}
