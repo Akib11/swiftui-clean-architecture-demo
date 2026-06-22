@@ -22,7 +22,6 @@
 		E174C4822F7D5114000E9B6E /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4812F7D5114000E9B6E /* UsersService.swift */; };
 		E174C4852F7D52AD000E9B6E /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4842F7D52AD000E9B6E /* ViewState.swift */; };
 		E174C4872F7D52D4000E9B6E /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4862F7D52D4000E9B6E /* UsersViewModel.swift */; };
-		E174C4892F7D5732000E9B6E /* MockUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4882F7D5732000E9B6E /* MockUsersService.swift */; };
 		E174C49A2F7D5C73000E9B6E /* UsersCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C4992F7D5C73000E9B6E /* UsersCoordinatorView.swift */; };
 		E174C49C2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C49B2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift */; };
 		E174C49E2F7D5CD1000E9B6E /* FavouriteUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174C49D2F7D5CD1000E9B6E /* FavouriteUsersView.swift */; };
@@ -58,7 +57,6 @@
 		E1D3003E2F8E60FC001B8B97 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3003D2F8E60FC001B8B97 /* UsersRepository.swift */; };
 		E1D300402F8E6160001B8B97 /* UsersServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3003F2F8E6160001B8B97 /* UsersServiceProtocol.swift */; };
 		E1D300422F8E61BC001B8B97 /* CachedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D300412F8E61BC001B8B97 /* CachedUser.swift */; };
-		E1D300442F8E62B3001B8B97 /* MockUsersCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D300432F8E62B3001B8B97 /* MockUsersCacheService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +92,6 @@
 		E174C4812F7D5114000E9B6E /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		E174C4842F7D52AD000E9B6E /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		E174C4862F7D52D4000E9B6E /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
-		E174C4882F7D5732000E9B6E /* MockUsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsersService.swift; sourceTree = "<group>"; };
 		E174C4992F7D5C73000E9B6E /* UsersCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCoordinatorView.swift; sourceTree = "<group>"; };
 		E174C49B2F7D5C95000E9B6E /* FavouriteUsersCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersCoordinatorView.swift; sourceTree = "<group>"; };
 		E174C49D2F7D5CD1000E9B6E /* FavouriteUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUsersView.swift; sourceTree = "<group>"; };
@@ -133,7 +130,6 @@
 		E1D3003D2F8E60FC001B8B97 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		E1D3003F2F8E6160001B8B97 /* UsersServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersServiceProtocol.swift; sourceTree = "<group>"; };
 		E1D300412F8E61BC001B8B97 /* CachedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedUser.swift; sourceTree = "<group>"; };
-		E1D300432F8E62B3001B8B97 /* MockUsersCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsersCacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -494,7 +490,6 @@
 			children = (
 				E174C4812F7D5114000E9B6E /* UsersService.swift */,
 				E1D3003F2F8E6160001B8B97 /* UsersServiceProtocol.swift */,
-				E174C4882F7D5732000E9B6E /* MockUsersService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -504,7 +499,6 @@
 			children = (
 				E1D300392F8E6041001B8B97 /* UsersCacheService.swift */,
 				E1D3003B2F8E60E3001B8B97 /* UsersCacheServiceProtocol.swift */,
-				E1D300432F8E62B3001B8B97 /* MockUsersCacheService.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -676,7 +670,6 @@
 				E1C8B4B72F66FCE100367861 /* NetworkLogger.swift in Sources */,
 				E1D300402F8E6160001B8B97 /* UsersServiceProtocol.swift in Sources */,
 				E1718D242F8FD88700AF103A /* FavouriteUser.swift in Sources */,
-				E1D300442F8E62B3001B8B97 /* MockUsersCacheService.swift in Sources */,
 				E1C8B4922F66F9CF00367861 /* CartCoordinatorView.swift in Sources */,
 				E1C8B2A62F604D7700367861 /* UsersView.swift in Sources */,
 				E1C8B4AD2F66FCAA00367861 /* Router.swift in Sources */,
@@ -684,7 +677,6 @@
 				E1D300422F8E61BC001B8B97 /* CachedUser.swift in Sources */,
 				E1C8B4AE2F66FCAA00367861 /* HTTPMethod.swift in Sources */,
 				E174C4822F7D5114000E9B6E /* UsersService.swift in Sources */,
-				E174C4892F7D5732000E9B6E /* MockUsersService.swift in Sources */,
 				E1C8B4AF2F66FCAA00367861 /* HTTPTask.swift in Sources */,
 				E1718D292F8FD8D700AF103A /* FavouriteUsersCacheService.swift in Sources */,
 				E1C8B4B02F66FCAA00367861 /* EndPointType.swift in Sources */,
