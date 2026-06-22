@@ -11,17 +11,22 @@ import Combine
 @MainActor
 final class FavouriteUsersViewModel: ObservableObject {
     
-    private let repository: FavouriteUsersRepositoryProtocol
+    private let getFavouriteUsersUseCase: GetFavouriteUsersUseCaseProtocol
+    private let removeFavouriteUserUseCase: RemoveFavouriteUserUseCaseProtocol
     
     @Published var state: ViewState<[User]> = .idle
     
-    init(repository: FavouriteUsersRepositoryProtocol) {
-        self.repository = repository
+    init(
+        getFavouriteUsersUseCase: GetFavouriteUsersUseCaseProtocol,
+        removeFavouriteUserUseCase: RemoveFavouriteUserUseCaseProtocol
+    ) {
+        self.getFavouriteUsersUseCase = getFavouriteUsersUseCase
+        self.removeFavouriteUserUseCase = removeFavouriteUserUseCase
     }
     
     func loadFavourites() {
         do {
-            let users = try repository.getFavouriteUsers()
+            let users = try getFavouriteUsersUseCase.execute()
             state = .success(users)
         } catch {
             state = .failure(error.localizedDescription)
@@ -30,7 +35,7 @@ final class FavouriteUsersViewModel: ObservableObject {
     
     func removeFavourite(userId: String) {
         do {
-            try repository.removeFromFavourites(userId: userId)
+            try removeFavouriteUserUseCase.execute(userId: userId)
             loadFavourites()
         } catch {
             state = .failure(error.localizedDescription)

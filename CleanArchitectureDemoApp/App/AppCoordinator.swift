@@ -8,4 +8,7 @@
 import Foundation
 import Combine
 
+/// Acts as the entry point for app-level navigation and flow coordination.
+/// Currently lightweight, but provides a central place for future app-wide
+/// navigation, deep linking, authentication flows, and dependency orchestration.
 final class AppCoordinator: ObservableObject {}
